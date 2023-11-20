@@ -1,0 +1,11 @@
+Inicio
+acumulador, i[0-n]
+contador, i[0-n]
+acumulador <--10
+contador <--5
+Mientras acumulador <=20 entonces
+ << contador\acumulador
+ contador <--contador + 5
+ acumulador <-- acumulador+2
+Fin Mientras
+Fin

@@ -1,0 +1,44 @@
+Inicio
+nombre, x(100)[{a-z},{A-Z},{BS}]
+posicion, x(100)[{a-z},{A-Z},{BS}]
+reporte, x(100)[{a-z},{A-Z},{BS}]
+reporte <--"Listado de jugadores\n"
+respuesta, x(100)[{a-z},{A-Z},{BS}]
+contador, i[0-n]
+contador <--1
+edad, d[0-n]
+sumaedades, d[0-n]
+sumaestaturas, d[0-n]
+estaturas <--0
+estatura, d[0-n]
+promedioedad; d[0-n]
+promedioedad <--0
+promedioestatura, d [0-n]
+promedioestatura <--0
+terminar, x(10)[{a-z}]
+terminar <--Verdadero
+Mientras terminar == Verdadero entonces
+ << "Ingrese información del jugador #" + contador
+ << "Nombre del jugador"
+ >> nombre
+ << "Posicion en el campo de juego"
+ >> posicion
+ << "Edad"
+ >> edad
+ sumaedades <--edad + sumaedades
+ << "Estatura"
+ >> estatura
+ sumaestaturas <--estatura + sumaestaturas
+ reporte <-- reporte + contador + "." + nombre + "-" + posicion + "-" + ", edad " + edad + ", estatura " + estatura + "\n"
+ << "¿Desea ingresar otro jugador?(s/n)"
+ >> respuesta
+  Si respuesta == "n" entonces
+   terminar <-- false
+  Fin Si
+ contador <-- contador + 1
+ promedioedad <-- sumaedades/contador
+ promedioestatura <-- sumaestatura/contador
+Fin Mientras
+reporte <-- reporte + "Promedio de Edades: " + promedioedad + "\n Promedio de Estaturas: " + promedioestatura
+<< reporte
+Fin

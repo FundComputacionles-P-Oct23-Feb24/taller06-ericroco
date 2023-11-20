@@ -1,0 +1,32 @@
+Inicio
+resultado,i [0-n]
+primer, i[0-n]
+segundo, i[0-n]
+residuo, i [0-n]
+contador, i[0-n]
+resultado <--0
+primer <--1
+segundo <-- 1
+residuo <--0
+contador <--1
+residuo <-- primer/2
+primer <-- primer + 1
+Si residuo == 0 entonces
+ resultado <-- primer + segundo
+Caso contrario 
+ resultado <--primer - segundo
+Fin Si
+Si contador == 1
+ << resultado
+Fin Si 
+contador <-- contador +1
+Si residuo == 0 entonces
+ <<"/" + primer + " + " segundo
+Caso contraio
+  Si primer > 0 entonces
+   << "/" + primer + "-" + segundo
+  Fin Si
+Si contador ==11 entonces
+ <<"/" + resultado
+Fin Si
+Fin
